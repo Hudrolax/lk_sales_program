@@ -132,4 +132,4 @@ dmypy.json
 /models
 /.pytest_cache
 env.py
-/idea
+/.idea
