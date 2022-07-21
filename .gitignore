@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# manual ignore
+/models
+/.pytest_cache
+env.py
+/idea
