@@ -176,6 +176,14 @@ layout = dbc.Container([
                     'fontWeight': 'bold',
                     'textAlign': 'center'
                 },
+                style_cell = {
+                    'font_size': '14px',
+                },
+                css=[
+                        {"selector": ".dash-spreadsheet tr th", "rule": "height: 15px;"},  # set height of header
+                        {"selector": ".dash-spreadsheet tr td", "rule": "height: 10px;"},  # set height of body rows
+                    ],
+                fill_width=False,
                 merge_duplicate_headers=True,
             ),
             # width={'size': 5, 'offset': 0}
