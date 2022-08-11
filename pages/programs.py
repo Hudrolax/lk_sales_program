@@ -101,7 +101,7 @@ layout = dbc.Container([
                              options=date_options(), value=date_options()[0]['value'],
                              clearable=False, persistence=True, persistence_type='session'),
             ]),
-            width={'size': 2, 'offset': 0}
+            # width={'size': 2, 'offset': 0}
         ),
 
         dbc.Col(
@@ -111,7 +111,8 @@ layout = dbc.Container([
                                                            'Менеджер'], value='В целом по компании', clearable=False,
                              persistence=True,
                              persistence_type='session'),
-            ]), width={'size': 2, 'offset': 0}
+            ]),
+            # width={'size': 2, 'offset': 0}
         ),
 
         dbc.Col(
@@ -119,7 +120,8 @@ layout = dbc.Container([
                 html.Div(id='forecast_layer_label'),
                 dcc.Dropdown(id="layer", style={'display': 'none'}, searchable=True, clearable=False,
                              persistence=True, persistence_type='session'),
-            ]), width={'size': 4, 'offset': 0}
+            ]),
+            # width={'size': 4, 'offset': 0}
         ),
 
         dbc.Col([
@@ -129,7 +131,9 @@ layout = dbc.Container([
                 id='replace_confirmation_dialog',
                 message='Перенести прогноз в план? Это перезатрет ручные изменения!'
             ),
-        ], align='end', width={'size': 2, 'offset': 0}),
+        ], align='end',
+            # width={'size': 2, 'offset': 0}
+        ),
 
         dbc.Col([
             dcc.ConfirmDialogProvider(
@@ -138,7 +142,9 @@ layout = dbc.Container([
                 id='send_confirmation_dialog',
                 message='Установить планы продаж в 1С?'
             ),
-        ], align='end', width={'size': 2, 'offset': 0})
+        ], align='end',
+            # width={'size': 2, 'offset': 0}
+        )
     ]),
 
     dbc.Row(dbc.Col(html.Br())),
@@ -172,7 +178,7 @@ layout = dbc.Container([
                 },
                 merge_duplicate_headers=True,
             ),
-            width={'size': 6, 'offset': 0}
+            # width={'size': 5, 'offset': 0}
         ),
 
         # Информация о модели прогнозирования
@@ -186,7 +192,9 @@ layout = dbc.Container([
             dcc.Graph(id='main-graph',
                       figure=redis_worker[0].main_graph()
                       ),
-        ], width={'size': 6, 'offset': 0})
+        ],
+            width={'size': 6, 'offset': 0}
+        )
     ], justify='start'),
     dbc.Modal(
         [
