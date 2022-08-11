@@ -28,7 +28,7 @@ app = Dash(__name__, title='Планы продаж', external_stylesheets=[dbc.
            meta_tags=[{"name": "viewport", 'content': 'width=device-width, initial-scale=1.0'}],
            url_base_pathname='/sales_program/', use_pages=True)
 enable_dash_auth(app)
-server = app.server
+
 
 # ************** Layout **************
 # logo_img = 'img/logo.jpg'  # replace with your own image
@@ -36,7 +36,7 @@ server = app.server
 navbar = dbc.NavbarSimple(
     className="navbar",
     children=[
-        # html.Div('db', style={'color': 'white'}),
+        html.Div('Версия прогноза', style={'color': 'white'}),
         dcc.Dropdown(id="db", clearable=False, persistence=True, persistence_type='session', options=[0, 1, 2],
                      value=0),
         *[dbc.NavItem(dbc.NavLink(page['title'], href=page["relative_path"]))
