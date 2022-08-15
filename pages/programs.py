@@ -69,7 +69,7 @@ def fill_tbl(period=None, subdivision=None, region=None, manager=None, replace_p
     return gfd.to_dict('records'), tbl_columns
 
 
-def send_program_to_1c(tbl_data: list, period, layer, subdivision=None, region=None, manager=None) -> str | None:
+def send_program_to_1c(tbl_data: list, period, layer, subdivision=None, region=None, manager=None, **kwargs) -> str | None:
     programs = []
     for row in tbl_data:
         program = {
@@ -203,7 +203,7 @@ layout = dbc.Container([
         ],
             width={'size': 6, 'offset': 0}
         )
-    ], justify='start'),
+    ], justify='center'),
     dbc.Modal(
         [
             dbc.ModalHeader("Установка плана в 1С"),
